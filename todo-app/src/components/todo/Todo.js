@@ -1,18 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Todo(props) {
 
     const navigate = useNavigate();
 
     const onClicked = (id) => {
-      navigate('/todos/' + id);
+        navigate('/todos/' + id);
     }
 
     return (
-        <div onClick={() => { onClicked(props.id) }}>
-            <h2>{props.title}</h2>
-        </div>
+
+        <a onClick={() => { onClicked(props.id) }} className="list-group-item list-group-item-action">
+            {props.title}                
+        </a>
+
     )
 
 }

@@ -16,7 +16,8 @@ export default function Todos() {
     }, []);
 
     return (
-        <div>
+        <div className="col-6 offset-3">
+            <div className="list-group todo-list">
             {
                 todosState.map((item) => {
                     return <Todo
@@ -26,6 +27,7 @@ export default function Todos() {
                     />
                 })
             }
+            </div>
         </div>
     )
 }

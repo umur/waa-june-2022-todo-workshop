@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-export default function DetailTodo(){
+export default function DetailTodo() {
 
     const params = useParams();
 
@@ -18,12 +18,17 @@ export default function DetailTodo(){
     }, [params.id])
 
     return (
-        <div>
 
-            <h4>{todoState.title}</h4>
-            <h4>{todoState.description}</h4>
-
+        <div className="col-6 offset-3 detail-card">
+            <div className="card" >
+                <div className="card-body">
+                    <h5 className="card-title">{todoState.title}</h5>
+                    <p className="card-text">{todoState.description}</p>
+                </div>
+            </div>
         </div>
+
+
     )
 
 }
